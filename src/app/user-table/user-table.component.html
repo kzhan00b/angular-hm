@@ -1,0 +1,41 @@
+<style>
+.table {
+    justify-content: center;
+    margin-top: 16px;
+    padding: 5%;
+    /* background-color: blueviolet; */
+  }
+
+.table-title{
+    text-underline-position: below;
+}
+
+tr:hover{
+    background: pink;
+    color: white;
+    cursor: pointer;
+}
+</style>
+
+<div class="table">
+    <h1 class='table-title'>User Table</h1>
+    <hr />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" sortable="id" (sort)="onSort($event)">Id</th>
+                <th scope="col" sortable="createdAt" (sort)="onSort($event)">Created At</th>
+                <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+                <th scope="col" sortable="phone" (sort)="onSort($event)">Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userArray" (click)="doSomething(user)">
+                <td (click)="doSomething(user.name)">{{user.id}}</td>
+                <td>{{user.createdAt}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.phone}}</td>
+            </tr>
+    </tbody>
+    </table>
+</div>
