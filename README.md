@@ -1,3 +1,23 @@
+# node-sass problem
+
+NPM Install node-sass package
+node-sass package requires installing of external package from github, which will cause the download to fail as proxy will block
+
+
+Manually download Node Binary from https://github.com/sass/node-sass-binaries
+
+Manually npm install the following:
+
+> npm install -g @angular/cli@1.5.0 --sass-binary-path=<DIRECTORY_HERE>/linux-x64-57_binding.node
+
+> npm install node-sass@4.11.0 --sass-binary-path=<DIRECTORY_HERE>/linux-x64-57_binding.node
+
+> mkdir -p node_modules/node-sass/vendor/<Binary Filename without binding.node (i.e. linux-x64-57>/binding.node 
+
+> cp binding.node to above file, rename file to "binding.node"
+
+# node-sass problem end ####
+
 # App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
